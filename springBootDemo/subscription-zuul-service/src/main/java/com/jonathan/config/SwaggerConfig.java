@@ -1,5 +1,13 @@
 package com.jonathan.config;
 
+/**
+ * Basic integration tests for zuul-service  application.
+ * @since 2018/06/18
+ * @version 0.0.1-SNAPSHOT
+ * @author Jonathan Nmaju
+ */
+
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: rabbitmq
+Implementation-Title: rabbitmq-service
 Implementation-Version: 0.1.0
 Built-By: mcamp
-Implementation-Vendor-Id: org.springframework
+Implementation-Vendor-Id: com.jonathan
 Build-Jdk: 1.8.0_144
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/rabbitmq
+ ot-starter-parent/rabbitmq-service
 Created-By: Maven Integration for Eclipse
 

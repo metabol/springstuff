@@ -19,6 +19,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 @SpringBootApplication
 public class Application {
 
@@ -40,6 +41,7 @@ public class Application {
     Binding binding(Queue queue, TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
     }
+  
 
     @Bean
     SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,

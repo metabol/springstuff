@@ -1,5 +1,13 @@
 package com.jonathan.filter;
 
+/**
+ * Basic integration tests for zuul-service  application.
+ * @since 2018/06/18
+ * @version 0.0.1-SNAPSHOT
+ * @author Jonathan Nmaju
+ */
+
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.netflix.zuul.ZuulFilter;
