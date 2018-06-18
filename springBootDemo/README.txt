@@ -17,7 +17,9 @@ Service Architecture
 *********************
 
 1)Service discovery --> Netflix Eureka-server --> localhost:8090
-2) Gateway API --> Netflix Zuul ---> localhost:8079
+
+
+2) Gateway API --> Netflix Zuul ---> localhost:8090
 
 
 4)Subscript-service -->Security -->user/password localhost:9990
@@ -25,22 +27,20 @@ Service Architecture
   - Exposes subcription creation API  /subcribe/new?{payload}
   - Exposes quering of all subscriptions /subscribe/users
   
-  
-  
 3) Circuit Breaker --> Netflix histrix
+
 4) Persistent Storage --> Mysql Databases  (Could be made more secure with SSL certificates)
 
 
-5) Email Service --> Netflix histrix
+5) Email Service --> Netflix histrix with Apache Kafta?
 
 6)Event service
+
 EVENTS WITH RABBITMQ
 **********************
 $ docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3-management
 
-EXTERNAL Library
-?::::::::::::::::
-servlet javax.servlet.ServletContext
+
 
 
 
