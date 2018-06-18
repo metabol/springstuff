@@ -1,4 +1,10 @@
 # springBootDemo
+This Project is still to be tested especially docer and kubernetes scripts so watch out!!
+
+
+
+***********************
+Login credenciales
 login:jnmaju
 password:jnmaju
 
@@ -78,6 +84,15 @@ Logging Path resolves to
 ************************
 1) /var/log --> in unix
 2) c:\var\log --> in windows
+
+
+
+
+********************
+Docker files are located in the same directory as the run.sh files
+Kubernetes scripts are in the kubernets/folder
+
+
 
 
 
