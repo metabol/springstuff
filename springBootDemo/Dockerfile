@@ -7,7 +7,7 @@ LABEL maintainer="jnmaju"
 # Add a volume pointing to /tmp
 VOLUME /tmp
 
-# Make port 9990 available to the world outside this container
+# Make port 8080 available to the world outside this container
 EXPOSE 9990
 
 #Create logfile

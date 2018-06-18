@@ -7,15 +7,15 @@ LABEL maintainer="jnmaju"
 # Add a volume pointing to /tmp
 VOLUME /tmp
 
-# Make port 9990 available to the world outside this container
-EXPOSE 9990
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
 #Create logfile
-RUN mkdir -p /var/log/subscription/subscription.log
+RUN mkdir -p /var/log/subscription-zuul/subscription.log
 
 
 # The application's jar file
-ARG JAR_FILE=subscription-service-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=subscription-zuul-service-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka
+  labels:
+    app: eureka
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eureka
+  template:
+    metadata:
+      labels:
+        app: eureka
+    spec:
+      containers:
+      - name: eureka
+        image: eureka-img
+        ports:
+        - containerPort: 8090

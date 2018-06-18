@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscribe
+  labels:
+    app: subscribe
+spec:
+  ports:
+    - port: 9990
+  selector:
+    app: subscribe
+    tier: frontend
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sb-pv-claim
+  labels:
+    app: subscribe
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: subscribe
+  labels:
+    app: subscribe
+spec:
+  selector:
+    matchLabels:
+      app: subscribe
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: subscribe
+        tier: frontend
+    spec:
+      containers:
+      - image: metabol/images:subscribe-img
+        name: wordpress
+        env:
+        - name: SUBSCRIBE_DB_HOST
+          value: subscribe-mysql
+        - name: SUBSCRIBE_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 9900
+          name: subscribe
+        volumeMounts:
+        - name: subscribe-persistent-storage
+          mountPath: /tmp
+      volumes:
+      - name: subscribe-persistent-storage
+        persistentVolumeClaim:
+          claimName: sb-pv-claim
+

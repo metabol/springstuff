@@ -1,0 +1,72 @@
+---important info : Create mysql secret password
+-- $ kubectl create secret generic mysql-pass --from-literal=password=jnmaju
+
+
+--- create mysql service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscribe-mysql
+  labels:
+    app: subscribe
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: subscribe
+    tier: mysql
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: subcribe
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: subscribe-mysql
+  labels:
+    app: subscribe
+spec:
+  selector:
+    matchLabels:
+      app: subscribe
+      tier: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: subscribe
+        tier: mysql
+    spec:
+      containers:
+      - image: metabol/images:mysql5.7
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+
