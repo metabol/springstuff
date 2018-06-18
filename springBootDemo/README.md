@@ -1,20 +1,30 @@
 # springBootDemo
+login:jnmaju
+password:jnmaju
 
 
-INSTALLATION SOFTWARE:
+
 *********************
+INSTALLATION SOFTWARE:
+
 1)java JDK 1.8
 2) Maven 3.xx
 3) IDE eclipse, or netbeans
 4) MYSQL 5.7 server
 
-Database:
+
+
+
+
 *********
+Database:
+
 Execute DUMB.sql and User.sql in your database
 
 
-PORTS
 ******
+PORTS
+
 Open the following ports on your test machine: 8080, 8090, 9990, 3306
 
 1) Start the eureka service
@@ -50,9 +60,10 @@ localhost:9990/subscribe/new?email=bat@simpson.com&consent=y&gender=m&firstName=
 localhost:9990/subscribe/new?email=lisa@simpson.com&consent=y&gender=m&firstName=lisa&subscriptionHash=lisa.simpson&dateOfBirth=09/01/1993
 
 
-Confirm that your by pointing your browser 
+
 *******************************************
-localhost:9990/subscribe/users
+Confirm that your by pointing your browser 
+ - localhost:9990/subscribe/users
 
 
 Configure your classpath with the following libraries
