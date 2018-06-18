@@ -1,0 +1,5 @@
+
+localhost:9990/subscribe/new?email=homer@simpson.com&consent=y&gender=m&firstName=homer&subscriptionHash=homer.simpson&dateOfBirth=09/01/1953
+localhost:9990/subscribe/new?email=marge@simpson.com&consent=y&gender=m&firstName=marge&subscriptionHash=marge.simpson&dateOfBirth=09/01/1959
+localhost:9990/subscribe/new?email=bat@simpson.com&consent=y&gender=m&firstName=bat&subscriptionHash=bat.simpson&dateOfBirth=09/01/1993
+localhost:9990/subscribe/new?email=lisa@simpson.com&consent=y&gender=m&firstName=lisa&subscriptionHash=lisa.simpson&dateOfBirth=09/01/1993

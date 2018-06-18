@@ -1,0 +1,7 @@
+com\jonathan\controller\MainController.class
+com\jonathan\controller\ServiceInstanceRestController.class
+com\jonathan\Application.class
+com\jonathan\dal\SubscriptionRepository.class
+com\jonathan\model\Subscription.class
+com\jonathan\dal\UserRepository.class
+com\jonathan\model\User.class
